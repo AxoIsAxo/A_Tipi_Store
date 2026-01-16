@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "hytale",
+      "image": "deinfreu/hytale-server:experimental",
+      "container_name": "hytale-server",
+      "restart": "unless-stopped",
+      "tty": true,
+      "stdin_open": true,
+      "ports": [
+        {
+          "host": "${APP_PORT}",
+          "container": 5520,
+          "protocol": "udp"
+        }
+      ],
+      "volumes": [
+        {
+          "host": "${APP_DATA_DIR}/data",
+          "container": "/home/container"
+        },
+        {
+          "host": "/etc/machine-id",
+          "container": "/etc/machine-id",
+          "readOnly": true
+        }
+      ],
+      "environment": [
+        { "key": "SERVER_IP", "value": "0.0.0.0" },
+        { "key": "SERVER_PORT", "value": "5520" },
+        { "key": "PROD", "value": "FALSE" },
+        { "key": "DEBUG", "value": "${DEBUG_MODE}" },
+        { "key": "TZ", "value": "${TIMEZONE}" }
+      ]
+    }
+  ]
+}
