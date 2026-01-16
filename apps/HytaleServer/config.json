@@ -1,0 +1,29 @@
+{
+  "name": "Hytale Server",
+  "id": "hytale-server",
+  "short_desc": "Offizieller Early Access Hytale Server (Experimental)",
+  "description": "Hoste deinen eigenen Hytale Server auf Big Berta. Nutzt das deinfreu/hytale-server Image für maximale Kompatibilität mit der 2026 Early Access Version.",
+  "categories": ["Gaming"],
+  "version": "1.0.0",
+  "author": "Axo",
+  "website": "https://hytale.com",
+  "source": "https://hub.docker.com/r/deinfreu/hytale-server",
+  "port": 5520,
+  "exposable": false,
+  "dynamic_config": true,
+  "fields": [
+    {
+      "id": "TIMEZONE",
+      "label": "Zeitzone",
+      "type": "text",
+      "default": "Europe/Vienna",
+      "description": "Wichtig für Ingame-Events und Logs."
+    },
+    {
+      "id": "DEBUG_MODE",
+      "label": "Debug Modus",
+      "type": "boolean",
+      "default": false
+    }
+  ]
+}
