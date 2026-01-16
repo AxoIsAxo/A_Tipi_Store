@@ -1,10 +1,9 @@
 {
-  "schemaVersion": 2,
   "services": [
     {
       "name": "hytale",
       "image": "deinfreu/hytale-server:experimental",
-      "container_name": "hytale-server",
+      "isMain": true,
       "restart": "unless-stopped",
       "tty": true,
       "stdin_open": true,
@@ -30,8 +29,8 @@
         { "key": "SERVER_IP", "value": "0.0.0.0" },
         { "key": "SERVER_PORT", "value": "5520" },
         { "key": "PROD", "value": "FALSE" },
-        { "key": "DEBUG", "value": "${DEBUG_MODE}" },
-        { "key": "TZ", "value": "${TIMEZONE}" }
+        { "key": "DEBUG", "value": "FALSE" },
+        { "key": "TZ", "value": "${TZ}" }
       ]
     }
   ]
